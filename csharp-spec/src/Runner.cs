@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace csharp_spec.src
+
+namespace csharp_spec.Src
 {
     class Runner
     {
         static void Main()
         {
-            Introduction.Introduction intro = new Introduction.Introduction();
-
-            intro.Run();
+            Introduction.Base.RunMe();
 
             KeepConsoleOpen();
         }
