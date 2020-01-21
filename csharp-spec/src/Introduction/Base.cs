@@ -14,6 +14,7 @@ namespace csharp_spec.Src.Introduction
         {
             PrimitivesLineage.RunMe();
             UserDefinedTypes.RunMe();
+            Classes.RunMe();
         }
 
         class UserDefinedTypes : Runnable<UserDefinedTypes>

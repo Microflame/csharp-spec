@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace csharp_spec.Src.Tools
 {
-    // Unlike in Java, in C# it is ok to put multiple top public level types (classes/interfaces) in a single file
+    // Unlike in Java, in C# it is ok to put multiple public top level types (classes/interfaces) in a single file
 
     interface IRunnable
     {
