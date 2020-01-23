@@ -77,6 +77,12 @@ namespace csharp_spec.Src.Introduction
                 // Just... Don't
             }
         }
+        // Type parameters
+        public class Pair<T, U>
+        {
+            public T First;
+            public U Second;
+        }
 
         // Type modifiers
         public int anyoneCanAccess;
@@ -88,12 +94,6 @@ namespace csharp_spec.Src.Introduction
         private const string ConstString = "Const can only be initialized used const and hence static by default";
         private readonly string ReadonlyString = "readonly fields are more like const in other langs";
 
-        // Type parameters
-        public class Pair<T, U>
-        {
-            public T First;
-            public U Second;
-        }
 
         public Classes()
         {
