@@ -10,6 +10,74 @@ namespace csharp_spec.Src.Introduction
 {
     class Classes : Runnable<Classes>
     {
+
+        class FunctionMembers : Runnable<FunctionMembers>
+        {
+            static string StaticString;
+            static FunctionMembers()
+            {
+                StaticString = "Static Constructor is a function member.";
+            }
+            public FunctionMembers()
+            {
+                Console.WriteLine("Instance Constructor is a function member.");
+            }
+
+            public string Method()
+            {
+                return "Method is a function member.";
+            }
+
+            public string Property
+            {
+                get
+                {
+                    return "Property is a fuction member.";
+                }
+                set
+                {
+                    Console.WriteLine(value);
+                    throw new NotImplementedException();
+                }
+            }
+
+            // Why is it called `this`? In my opinion it should be called in the same manner as ctor.
+            // Or we should have used this(...) for ctor
+            // Yet another C# incosistency
+            // And why not use operator[]? --Because we had no return by reference until C# 7 probably.
+            public string this[int idx]
+            {
+                get
+                {
+                    return "Indexer is a fuction member.";
+                }
+                set
+                {
+                    throw new NotImplementedException();
+                }
+            }
+
+            public static bool operator !(FunctionMembers fm)
+            {
+                Console.WriteLine("Operators are fuction members. They all should be public static");
+                return true;
+            }
+
+            public override void Run()
+            {
+                Console.WriteLine(StaticString);
+                Console.WriteLine(Method());
+                Console.WriteLine(Property);
+                Console.WriteLine(this[0]);
+                bool _ = !this;
+            }
+
+            ~FunctionMembers()
+            {
+                // Just... Don't
+            }
+        }
+
         // Type modifiers
         public int anyoneCanAccess;
         protected int onlyDerivedCanAccess;
@@ -81,6 +149,8 @@ namespace csharp_spec.Src.Introduction
             Console.WriteLine(x);
 
             Console.WriteLine(ParamArray("C#", "supports", "variable", "number", "of", "arguments"));
+
+            FunctionMembers.RunMe();
         }
     }
 }
