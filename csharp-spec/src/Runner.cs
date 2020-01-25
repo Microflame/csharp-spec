@@ -12,6 +12,7 @@ namespace csharp_spec.Src
         static void Main()
         {
             Introduction.Base.RunMe();
+            LexicalStructure.Base.RunMe();
 
             KeepConsoleOpen();
         }
